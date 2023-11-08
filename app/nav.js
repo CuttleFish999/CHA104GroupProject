@@ -25,16 +25,17 @@ const NumberSystem_LinksArr = [
 
 const NumberSystem = document.getElementById('NumberSystem');
 
-NumberSystem.addEventListener('click', function () {
+NumberSystem.addEventListener('mouseenter', function () {
     addElementEvent(NumberSystem_Arr,NumberSystem ,NumberSystem_LinksArr);
 });
 
 // 新增元素<a>事件
-let elementsAdded = false;
+let elementsAdded;
 function addElementEvent(arr, SuperFa, linksArr) {
     const existingElements = document.querySelectorAll('.added-element');
 
     if (elementsAdded) {
+        
         existingElements.forEach((element, index) => {
             element.style.opacity = 0;
             element.addEventListener('transitionend', () => {
@@ -42,17 +43,19 @@ function addElementEvent(arr, SuperFa, linksArr) {
             });
         });
     } else {
+        elementsAdded = true;
         const container = document.createElement('div');
+        container.style.background='red';
+
         for (let i = arr.length; i >= 0; i--) {
             const newElement = document.createElement('a');
             newElement.textContent = arr[i];
-            newElement.classList.add('added-element');
+            newElement.classList.add('dropdown-content');
             newElement.href = `/link/${SuperFa.innerText}/${linksArr[i]}`;
             // SuperFa.insertAdjacentElement('afterend', newElement);
-            
+            // SuperFa
             container.append(newElement); 
            
-            
             setTimeout(() => {
                 newElement.style.opacity = 1;
             }, 10 * i);
@@ -60,5 +63,5 @@ function addElementEvent(arr, SuperFa, linksArr) {
         SuperFa.append(container); 
     }
 
-    elementsAdded = !elementsAdded;
+    // elementsAdded = !elementsAdded;
 }
