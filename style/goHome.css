@@ -1,0 +1,7 @@
+body{
+    position: relative;
+}
+#goHome{
+    width: 25px;
+    position: absolute;
+}
