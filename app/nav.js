@@ -1,5 +1,30 @@
 // 會員系統
 const NumberSystem_Arr = [
+    "註冊會員",
+    "忘記密碼",
+    "會員登入",
+    "會員登出",
+];
+
+const NumberSystem_LinksArr = [
+    "RegisterMember.html",
+    "ForgotPassword.html",
+    "MemberLogin.html",
+    "MemberLogout.html"
+];
+
+const NumberSystem = document.getElementById('NumberSystem');
+let numberSystemAdded = false;
+
+NumberSystem.addEventListener('mouseover', function () {
+    if (!numberSystemAdded) {
+        addElementEvent(NumberSystem_Arr, NumberSystem, NumberSystem_LinksArr);
+        numberSystemAdded = true;
+    }
+});
+
+// 成為房東
+const BecomeALandlord_Arr = [
     "註冊",
     "登入",
     "忘記密碼",
@@ -11,59 +36,46 @@ const NumberSystem_Arr = [
     "討論區",
 ];
 
-const NumberSystem_LinksArr = [
+const BecomeALandlord_LinksArr = [
     "Register",
     "Log In",
     "Forgot Password",
     "Edit Profile",
     "Add to Favorites",
-    "Recently Viewed Items",
-    "Contract Inquiry",
+    "Recently Viewed Listings",
+    "Contract Inquiries",
     "Member Verification",
-    "Discussion Forum"
+    "Discussion Forum",
+    "Become a Landlord",
 ];
 
-const NumberSystem = document.getElementById('NumberSystem');
+const BecomeALandlord = document.getElementById('BecomeALandlord');
+let landlordAdded = false;
 
-NumberSystem.addEventListener('mouseenter', function () {
-    addElementEvent(NumberSystem_Arr,NumberSystem ,NumberSystem_LinksArr);
+BecomeALandlord.addEventListener('mouseover', function () {
+    if (!landlordAdded) {
+        addElementEvent(BecomeALandlord_Arr, BecomeALandlord, BecomeALandlord_LinksArr);
+        landlordAdded = true;
+    }
 });
 
 // 新增元素<a>事件
-let elementsAdded;
 function addElementEvent(arr, SuperFa, linksArr) {
-    const existingElements = document.querySelectorAll('.added-element');
+    const container = document.createElement('div');
+    container.style.background = '#aaa';
 
-    if (elementsAdded) {
-        
-        existingElements.forEach((element, index) => {
-            element.style.opacity = 0;
-            element.addEventListener('transitionend', () => {
-                element.remove();
-            });
-        });
-    } else {
-        elementsAdded = true;
-        const container = document.createElement('div');
-        
-        container.style.background='#aaa';
+    for (let i = arr.length - 1; i >= 0; i--) {
+        const newElement = document.createElement('a');
+        newElement.textContent = arr[i];
+        newElement.classList.add('dropdown-content');
+        newElement.href = `/link/${SuperFa.innerText}/${linksArr[i]}`;
+        container.style.borderTop = '1px solid #000';
+        container.append(newElement);
 
-        for (let i = arr.length; i >= 0; i--) {
-            const newElement = document.createElement('a');
-            newElement.textContent = arr[i];
-            newElement.classList.add('dropdown-content');
-            newElement.href = `/link/${SuperFa.innerText}/${linksArr[i]}`;
-            // SuperFa.insertAdjacentElement('afterend', newElement);
-            // SuperFa
-            newElement.style.bordertop = '1px solid #000';
-            container.append(newElement); 
-           
-            setTimeout(() => {
-                newElement.style.opacity = 1;
-            }, 10 * i);
-        }
-        SuperFa.append(container); 
+        setTimeout(() => {
+            newElement.style.opacity = 1;
+        }, 10 * (arr.length - i));
     }
 
-    // elementsAdded = !elementsAdded;
+    SuperFa.append(container);
 }
