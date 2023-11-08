@@ -45,7 +45,8 @@ function addElementEvent(arr, SuperFa, linksArr) {
     } else {
         elementsAdded = true;
         const container = document.createElement('div');
-        container.style.background='red';
+        
+        container.style.background='#aaa';
 
         for (let i = arr.length; i >= 0; i--) {
             const newElement = document.createElement('a');
@@ -54,6 +55,7 @@ function addElementEvent(arr, SuperFa, linksArr) {
             newElement.href = `/link/${SuperFa.innerText}/${linksArr[i]}`;
             // SuperFa.insertAdjacentElement('afterend', newElement);
             // SuperFa
+            newElement.style.bordertop = '1px solid #000';
             container.append(newElement); 
            
             setTimeout(() => {

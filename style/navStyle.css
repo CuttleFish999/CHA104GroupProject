@@ -5,7 +5,7 @@
 }
 /* header */
 header{
-    background: #aaa;
+background: #aaa;
     padding: 1em;
     
 }
@@ -29,18 +29,32 @@ nav ul li:hover{
 nav ul li{
     /* border: 1px solid transparent; */
     transition: border 1s ease;
-    padding: 3px;
-    border-radius: 15px;
+    padding: 1px;
+    border-radius: 8px;
 }
 
 nav ul li a{
     font-size: 1em;
 
 }
-nav ul li:hover a {
+
+.dropdown-content:hover{
     color: yellow;
+    background: red;
+    transition: .1s;
+}
+nav li:hover :first-child{
+    color: yellow;
+    background: rgb(4, 0, 255);
+    display: block;
     transition: .3s;
 }
+nav li:hover ul{
+
+    background: red;
+    transition: .3s;
+}
+
 
 nav ul li img {
     width: 1em;
@@ -53,17 +67,17 @@ nav ul li img {
 @keyframes drawBorder {
 
     0% {
-      border-left: 2px solid #000;
+      border-left: 1px solid #000;
       
     }
     25% {
-      border-top: 2px solid #000;
+      border-top: 1px solid #000;
     }
     50% {
-      border-right: 2px solid #000;
+      border-right: 1px solid #000;
     }
     75% {
-      border-bottom: 2px solid #000;
+      border-bottom: 1px solid #000;
     }
     
     100% {
@@ -72,12 +86,12 @@ nav ul li img {
 
   }
   
-  .dropdown-content {
+.dropdown-content {
     display: none;
 }
 
 
-.dropdown:hover .dropdown-content {
+#NumberSystem:hover .dropdown-content {
     display: block;
 }
 
