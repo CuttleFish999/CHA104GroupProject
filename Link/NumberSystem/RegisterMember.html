@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/navStyle.css">
+    <link rel="stylesheet" href="/style/loginStyle.css">
     <title>註冊會員</title>
 
 </head>
+
 <body>
     <h1>註冊會員頁面</h1>
     <header>
-        <a href="/index.html"><h1 id="header-h1">首頁</h1></a>
+        <a href="/index.html">
+            <h1 id="header-h1">首頁</h1>
+        </a>
         <nav>
             <ul>
                 <li class="nav-li" id="NumberSystem"><a href="#">會員系統</a></li>
@@ -24,15 +29,31 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
-        <h2>最新消息</h2>
-        <p>這是我們的最新消息內容。</p>
+        <form action="login.php" method="post">
+            <h2>登入</h2>
+            <div id="formContainer">
+
+                <div class="input-container">
+                    <label for="userNumber">帳號:</label>
+                    <input type="text" id="userNumber" name="username" required>
+                    <label for="passNumber">密碼:</label>
+                    <input type="password" id="passNumber" name="password" required>
+
+                    <input type="button" id="loginBTN" value="登入">
+                </div>
+                
+            </div>
+        </form>
     </main>
+    
+    
 
     <footer>
         <p>&copy; 2023 CHA104-第二組</p>
     </footer>
     <script src="/app/nav.js"></script>
 </body>
+
 </html>
