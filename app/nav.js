@@ -42,37 +42,20 @@ NumberSystem.addEventListener('mouseover', function () {
 });
 
 // 租賃服務
-const BecomeALandlord_Arr = [
-    "註冊",
-    "登入",
-    "忘記密碼",
-    "資料修改",
-    "加入收藏",
-    "瀏覽過的物件",
-    "合約查詢",
-    "會員認證",
-    "討論區",
+const RentalService_Arr = [
+    "瀏覽物件",
 ];
 
-const BecomeALandlord_LinksArr = [
-    "Register",
-    "Log In",
-    "Forgot Password",
-    "Edit Profile",
-    "Add to Favorites",
-    "Recently Viewed Listings",
-    "Contract Inquiries",
-    "Member Verification",
-    "Discussion Forum",
-    "Become a Landlord",
+const RentalService_LinksArr = [
+    "BrowseListings.html",
 ];
 
-const BecomeALandlord = document.getElementById('BecomeALandlord');
+const RentalService = document.getElementById('RentalService');
 let landlordAdded = false;
 
-BecomeALandlord.addEventListener('mouseover', function () {
+RentalService.addEventListener('mouseover', function () {
     if (!landlordAdded) {
-        addElementEvent(BecomeALandlord_Arr, BecomeALandlord, BecomeALandlord_LinksArr);
+        addElementEvent(RentalService_Arr, RentalService, RentalService_LinksArr);
         landlordAdded = true;
     }
 });
