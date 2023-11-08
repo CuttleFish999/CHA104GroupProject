@@ -23,7 +23,7 @@ NumberSystem.addEventListener('mouseover', function () {
     }
 });
 
-// 成為房東
+// 租賃服務
 const BecomeALandlord_Arr = [
     "註冊",
     "登入",
@@ -59,16 +59,17 @@ BecomeALandlord.addEventListener('mouseover', function () {
     }
 });
 
-// 新增元素<a>事件
 function addElementEvent(arr, SuperFa, linksArr) {
     const container = document.createElement('div');
+    container.className = `${SuperFa.id}`;
     container.style.background = '#aaa';
 
-    for (let i = arr.length - 1; i >= 0; i--) {
+    // for (let i = arr.length - 1; i >= 0; i--) {
+    for (let i = 0; i < arr.length; i++) {
         const newElement = document.createElement('a');
         newElement.textContent = arr[i];
         newElement.classList.add('dropdown-content');
-        newElement.href = `/link/${SuperFa.innerText}/${linksArr[i]}`;
+        newElement.href = `/Link/${container.className}/${linksArr[i]}`;
         container.style.borderTop = '1px solid #000';
         container.append(newElement);
 
