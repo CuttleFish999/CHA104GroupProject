@@ -6,12 +6,30 @@ const NumberSystem_Arr = [
     "會員登出",
 ];
 
+// const NumberSystem_Arr_2 = [
+//     "基本資料管理",
+//     "我的收藏",
+//     "我的預約",
+//     "我的合約",
+//     "我的訂單",
+//     "成為房東",
+// ];
+
 const NumberSystem_LinksArr = [
     "RegisterMember.html",
     "ForgotPassword.html",
     "MemberLogin.html",
     "MemberLogout.html"
 ];
+
+// const NumberSystem_LinksArr_2 = [
+//     "BasicProfileManagement.html",
+//     "MyFavorites.html",
+//     "MyReservations.html",
+//     "MyContracts.html",
+//     "MyOrders.html",
+//     "BecomeALandlord.html"
+// ];
 
 const NumberSystem = document.getElementById('NumberSystem');
 let numberSystemAdded = false;
