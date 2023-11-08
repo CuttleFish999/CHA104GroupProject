@@ -1,19 +1,18 @@
-*{
+* {
     list-style: none;
     text-decoration: none;
     text-align: center;
 }
+
 /* header */
-header{
-background: #aaa;
+header {
+    background: #aaa;
     padding: 1em;
-    
 }
 
 /* nav */
-nav{
+nav {
     background: #ccc;
-    
 }
 
 nav ul {
@@ -22,84 +21,60 @@ nav ul {
     justify-content: space-around;
 }
 
-nav ul li:hover{
-    animation: drawBorder 1s infinite;
-    
-}
-nav ul li{
-    /* border: 1px solid transparent; */
+nav ul li {
+    border: 1px solid transparent;
     transition: border 1s ease;
     padding: 1px;
     border-radius: 8px;
-}
-
-nav ul li a{
     font-size: 1em;
-
+    display: inline-block;
 }
-
-.dropdown-content:hover{
-    color: yellow;
-    background: red;
-    transition: .1s;
-}
-nav li:hover :first-child{
-    color: yellow;
-    background: rgb(4, 0, 255);
-    display: block;
-    transition: .3s;
-}
-nav li:hover ul{
-
-    background: red;
-    transition: .3s;
-}
-
 
 nav ul li img {
     width: 1em;
-
 }
-.added-element{
-    display: block;
+
+.nav-li:hover{
+    background: blue;
 }
 
 @keyframes drawBorder {
-
     0% {
-      border-left: 1px solid #000;
-      
+        /* border-left: 1px solid transparent; */
     }
     25% {
-      border-top: 1px solid #000;
+        border-top: 3px solid transparent;
     }
     50% {
-      border-right: 1px solid #000;
+        border-right: 3px solid transparent;
     }
     75% {
-      border-bottom: 1px solid #000;
+        border-bottom: 3px solid transparent;
     }
-    
     100% {
-      /* border-bottom: 1px solid #000; */
+        border-left: 3px solid transparent;
     }
-
-  }
-  
-.dropdown-content {
-    display: none;
 }
 
-
-#NumberSystem:hover .dropdown-content {
-    display: block;
+nav ul li:hover {
+    animation: drawBorder 1s infinite;
+    border: 1px solid #000;
 }
 
+nav ul li:hover a:first-child {
+    color: yellow;
+}
 
-.dropdown-content:hover {
+nav li:hover .dropdown-content {
     display: block;
 }
 
 .dropdown-content:not(:hover) {
     display: none;
 }
+
+.dropdown-content:hover {
+    color: yellow;
+    background: red;
+}
+
