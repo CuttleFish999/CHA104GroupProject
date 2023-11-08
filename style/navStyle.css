@@ -23,12 +23,13 @@ nav ul {
 }
 
 nav ul li:hover{
-    animation: drawBorder 1s forwards;
+    animation: drawBorder 1s infinite;
     
 }
 nav ul li{
     /* border: 1px solid transparent; */
     transition: border 1s ease;
+    padding: 3px;
     border-radius: 15px;
 }
 
@@ -36,7 +37,7 @@ nav ul li a{
     font-size: 1em;
 
 }
-nav ul li:hover a{
+nav ul li:hover a {
     color: yellow;
     transition: .3s;
 }
@@ -52,16 +53,17 @@ nav ul li img {
 @keyframes drawBorder {
 
     0% {
-      border-left: 1px solid #000;
+      border-left: 2px solid #000;
+      
     }
     25% {
-      border-top: 1px solid #000;
+      border-top: 2px solid #000;
     }
     50% {
-      border-right: 1px solid #000;
+      border-right: 2px solid #000;
     }
     75% {
-      border-bottom: 1px solid #000;
+      border-bottom: 2px solid #000;
     }
     
     100% {
